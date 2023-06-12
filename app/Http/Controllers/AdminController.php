@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\Appointment;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Doctor;
 
@@ -105,5 +106,48 @@ public function deleteExpiredAppointments()
         $appointment->delete();
     }
 }
+
+public function showuser(){
+    $data = user::where('usertype', 0)->get();
+    return view('admin.showuser',compact('data'));
+}
+public function deleteuser($id){
+    $data=user::find($id);
+    $data->delete(); 
+    return redirect()->back();
+}
+public function updateuser($id){
+    $data=user::find($id);
+    return view('admin.update_user',compact('data'));
+}
+
+public function edituser(Request $request, $id){
+    $user=user::find($id);
+    $user->name=$request->name;
+    $user->phone=$request->phone;
+    $user->email=$request->email;
+    $user->address=$request->address;
+
+    $user->save();
+    return redirect()->back()->with('message','Patient Details Updated Successfully');
+    }
+
+            public function adduserview(){
+                return view('admin.add_user');
+            }
+        
+            public function uploaduser(Request $request){
+            $user=new user;
+            $user->name=$request->name;
+            $user->phone=$request->phone;
+            $user->email=$request->email;
+            $user->address=$request->address;
+            $user->password=$request->password;
+        
+            $user->save();
+            return redirect()->back()->with('message','Patient Added Successfully');
+            }
+
+            
 
 }

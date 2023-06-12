@@ -23,9 +23,10 @@ Route::middleware([
     'auth:sanctum','verified'])->get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    
 Route::get('/add_doctor_view',[AdminController::class,'addview']);
-
 Route::post('/upload_doctor',[AdminController::class,'upload']);
+
 Route::post('/appointment',[HomeController::class,'appointment']);
 Route::get('/myappointment',[HomeController::class,'myappointment']);
 Route::get('/cancel_appoint/{id}',[HomeController::class,'cancel_appoint']);
@@ -41,3 +42,11 @@ Route::post('/editdoctor/{id}',[AdminController::class,'editdoctor']);
 
 Route::get('/add_appointment_view',[AdminController::class,'addappointmentview']);
 Route::post('/upload_appointment',[AdminController::class,'uploadapp']);
+
+Route::get('/showuser',[AdminController::class,'showuser']);
+Route::get('/deleteuser/{id}',[AdminController::class,'deleteuser']);
+Route::get('/updateuser/{id}',[AdminController::class,'updateuser']);
+Route::post('/edituser/{id}',[AdminController::class,'edituser']);
+
+Route::get('/add_user_view',[AdminController::class,'adduserview']);
+Route::post('/upload_user',[AdminController::class,'uploaduser']);

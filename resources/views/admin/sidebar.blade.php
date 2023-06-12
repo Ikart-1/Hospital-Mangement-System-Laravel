@@ -7,7 +7,7 @@
       </a>
     </div>
     <hr class="horizontal dark mt-0">
-    <div class=" navbar-collapse  w-auto " id="sidenav-collapse-main">
+    <div class=" navbar-collapse  w-auto " style="height: 500px;" id="sidenav-collapse-main">
       <ul class="navbar-nav">
       <li class="nav-item">
           <a class="nav-link  active" href="{{url('showadoctors')}}">
@@ -42,6 +42,25 @@
             <span class="nav-link-text ms-1">Ajouter Rendez Vous</span>
           </a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="{{url('showuser')}}">
+            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="fa fa-heartbeat" style="font-size:17px; color:white"></i>
+            </div>
+            <span class="nav-link-text ms-1">Patients</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="{{url('add_user_view')}}">
+            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="fa fa-heartbeat" style="font-size:17px; color:white"></i>
+            </div>
+            <span class="nav-link-text ms-1">Ajouter Patients</span>
+          </a>
+        </li>
+        
       </ul>
     </div>
    
