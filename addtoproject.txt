@@ -1,0 +1,8 @@
+User Profiles
+Dictor Profiles
+Notifications
+Include filters and search to appointment management in dashbord admin
+الوصفات الطبية والسجلات الطبية: إضافة وظائف للأطباء لإنشاء وإدارة الوصفات الطبية للمرضى. بالإضافة إلى ذلك ، قم بتضمين قسم لتخزين وإدارة السجلات الطبية الإلكترونية 
+Reporting and Analytics
+Telemedicine Support: call video
+Multi-language Support
