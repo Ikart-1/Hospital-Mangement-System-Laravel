@@ -4,6 +4,15 @@
 
 <head>
 @include('admin.css')
+<style>
+  .navbar-vertical .navbar-nav>.nav-item .nav-link.active .icon {
+    background-image: linear-gradient(310deg, #06A3DA 0%, #87CEEB 100%);
+
+  }
+  aside{
+    background-image: linear-gradient(310deg, #06A3DA 0%, #87CEEB 100%);
+  }
+</style>
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -15,9 +24,9 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
             <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
-            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Médecins</li>
+            <li  class="breadcrumb-item text-sm text-dark active" aria-current="page">Médecins</li>
           </ol>
-          <h6 class="font-weight-bolder mb-0">Liste Des Médecins</h6>
+          <h6 style="color: #06A3DA;" class="font-weight-bolder mb-0">Liste Des Médecins</h6>
         </nav>
         <div class=" navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -40,7 +49,7 @@
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Médecins</h6>
+              <h6 >Médecins</h6>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">

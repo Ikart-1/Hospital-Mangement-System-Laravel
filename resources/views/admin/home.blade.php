@@ -4,6 +4,15 @@
 
 <head>
 @include('admin.css')
+<style>
+  .navbar-vertical .navbar-nav>.nav-item .nav-link.active .icon {
+    background-image: linear-gradient(310deg, #06A3DA 0%, #87CEEB 100%);
+
+  }
+  aside{
+    background-image: linear-gradient(310deg, #06A3DA 0%, #87CEEB 100%);
+  }
+</style>
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">

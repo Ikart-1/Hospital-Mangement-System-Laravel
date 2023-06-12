@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use Carbon\Carbon;
 use App\Models\Doctor;
 use App\Models\Appointment;
 
@@ -49,15 +50,26 @@ class HomeController extends Controller
         $data->save();
         return redirect()->back()->with('message','Appointment Request Successful . We Will Contact You Soon');
     }
-    public function myappointment(){
-      if(Auth::id()){
-         $userid=Auth::user()->id;
-         $appoint=appointment::where('user_id',$userid)->get();
-        return view('user.my_appointment',compact('appoint'));
-      }
-      else{
-         return redirect()->back();
-      }
+  
+
+    public function myappointment()
+    {
+        if (Auth::id()) {
+            $userid = Auth::user()->id;
+            $appoint = appointment::where('user_id', $userid)->get();
+            
+            // Vérifier les rendez-vous passés et mettre à jour le statut si la date est dépassée
+            foreach ($appoint as $appoints) {
+                if (Carbon::parse($appoints->date)->isPast() && $appoints->status !== "traiter") {
+                    $appoints->status = "traiter";
+                    $appoints->save();
+                }
+            }
+            
+            return view('user.my_appointment', compact('appoint'));
+        } else {
+            return redirect()->back();
+        }
     }
     public function cancel_appoint($id){
       $data=appointment::find($id);

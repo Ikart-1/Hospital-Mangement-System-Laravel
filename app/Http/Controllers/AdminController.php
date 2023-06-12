@@ -44,11 +44,12 @@ class AdminController extends Controller
     $doctor->save();
     return redirect()->back()->with('message','Doctor Added Successfully');
     }
-    public function showappointment(){
-        $this->deleteExpiredAppointments();
-        $data=appointment::all();
-        return view('admin.showappointment',compact('data'));
+    public function showappointment()
+    {
+        $data = appointment::whereIn('status', ['Canceled', 'Approved','In progress'])->get();
+        return view('admin.showappointment', compact('data'));
     }
+    
     public function approved($id){
      $data=appointment::find($id);
      $data->status='Approved'; 
@@ -96,16 +97,7 @@ class AdminController extends Controller
         }
 
         
-// cette  fontion est pour supprimer la rdv quand il deppase sa date
-public function deleteExpiredAppointments()
-{
-    $currentDate = Carbon::now()->toDateString();
-    $expiredAppointments = Appointment::where('date', '<', $currentDate)->get();
 
-    foreach ($expiredAppointments as $appointment) {
-        $appointment->delete();
-    }
-}
 
 public function showuser(){
     $data = user::where('usertype', 0)->get();
