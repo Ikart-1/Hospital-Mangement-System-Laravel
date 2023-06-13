@@ -21,7 +21,7 @@
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="date" id="date1" data-target-input="nearest">
-                                        <input type="text"
+                                        <input type="date"
                                             class="form-control bg-light border-0 datetimepicker-input"
                                             placeholder="Appointment Date" data-target="#date1" data-toggle="datetimepicker" name="date" style="height: 55px;">
                                     </div>

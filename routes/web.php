@@ -34,6 +34,7 @@ Route::get('/showappointment',[AdminController::class,'showappointment']);
 
 Route::get('/approved/{id}',[AdminController::class,'approved']);
 Route::get('/canceled/{id}',[AdminController::class,'canceled']);
+Route::get('/restored/{id}',[AdminController::class,'restored']);
 Route::get('/showadoctors',[AdminController::class,'showadoctors']);
 
 Route::get('/deletedoctor/{id}',[AdminController::class,'deletedoctor']);

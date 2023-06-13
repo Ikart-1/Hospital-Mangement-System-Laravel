@@ -91,8 +91,7 @@
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Message</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Statu</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Accepté</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Annulé</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Opérations</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -112,6 +111,7 @@
                       </td>
                       <td class="align-middle text-center text-sm">
                         <h6 class="mb-0 text-sm">{{$appoint->date}}</h6>
+                        <i class="fa fa-edit cursor-pointer"></i>
                       </td>
                       <td class="align-middle text-center text-sm">
                         <h6 class="mb-0 text-sm">{{$appoint->message}}</h6>
@@ -120,11 +120,20 @@
                         <h6 class="mb-0 text-sm">{{$appoint->status}}</h6>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <a class="btn btn-success" href="{{url('approved',$appoint->id)}}">Approved</a>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <a class="btn btn-danger" href="{{url('canceled',$appoint->id)}}">Canceled</a>
-                      </td>
+                          @if($appoint->status == 'Approved')
+                            <!-- Hide the Approved button -->
+                            <a class="btn btn-danger" href="{{url('canceled',$appoint->id)}}">Annuler</a>
+                            <button class="btn btn-success" disabled >Approuver</button>
+                          @elseif($appoint->status == 'Canceled')
+                            <!-- Hide the Canceled button -->
+                            <!-- Show the Retablir button -->
+                            <a class="btn btn-warning" href="{{url('restored',$appoint->id)}}">Retablir</a>
+                            <button class="btn btn-danger" disabled >Annuler</button>
+                          @elseif($appoint->status == 'In progress')
+                            <a class="btn btn-success" href="{{url('approved',$appoint->id)}}">Approuver</a>
+                            <a class="btn btn-danger" href="{{url('canceled',$appoint->id)}}">Annuler</a>
+                          @endif
+                        </td>
                     </tr>
                     @endforeach
                   </tbody>

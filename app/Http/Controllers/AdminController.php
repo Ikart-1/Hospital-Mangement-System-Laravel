@@ -62,6 +62,12 @@ class AdminController extends Controller
         $data->save();
         return redirect()->back();
        }
+       public function restored($id){
+        $data=appointment::find($id);
+        $data->status='In progress'; 
+        $data->save();
+        return redirect()->back();
+       }
        public function showadoctors(){
         $data=doctor::all();
         return view('admin.showadoctors',compact('data'));
