@@ -16,7 +16,7 @@
 
   }
   aside{
-    background-image: linear-gradient(310deg, #06A3DA 0%, #87CEEB 100%);
+    background-image: linear-gradient(310deg, #2152ff 0%, #21d4fd 100%);
   }
 </style>
   </head>
@@ -90,6 +90,21 @@
               </div>
             </div>
           </div>
+          <footer class="footer pt-3  ">
+        <div class="container-fluid">
+          <div class="row align-items-center justify-content-lg-between">
+            <div class="col-lg-6 mb-lg-0 mb-4">
+              <div class="copyright text-center text-sm text-muted text-lg-start">
+                © <script>
+                  document.write(new Date().getFullYear())
+                </script>,
+                AKDITAL
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </footer>
         </div>
     
       </main>

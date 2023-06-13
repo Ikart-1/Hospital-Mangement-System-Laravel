@@ -14,7 +14,7 @@
                   </div>
                 </div>
                 <div class="col-4 text-end">
-                  <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                  <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md" style=" background-image: linear-gradient(310deg, #2152ff 0%, #21d4fd 100%);">
                     <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
                   </div>
                 </div>
@@ -36,7 +36,7 @@
                   </div>
                 </div>
                 <div class="col-4 text-end">
-                  <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                  <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md" style=" background-image: linear-gradient(310deg, #2152ff 0%, #21d4fd 100%);">
                     <i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
                   </div>
                 </div>
@@ -58,7 +58,7 @@
                   </div>
                 </div>
                 <div class="col-4 text-end">
-                  <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                  <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md" style=" background-image: linear-gradient(310deg, #2152ff 0%, #21d4fd 100%);">
                     <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>
                   </div>
                 </div>
@@ -80,7 +80,7 @@
                   </div>
                 </div>
                 <div class="col-4 text-end">
-                  <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
+                  <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md" style=" background-image: linear-gradient(310deg, #2152ff 0%, #21d4fd 100%);">
                     <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
                   </div>
                 </div>
@@ -89,55 +89,13 @@
           </div>
         </div>
       </div>
-      <div class="row mt-4">
-        <div class="col-lg-7 mb-lg-0 mb-4">
-          <div class="card">
-            <div class="card-body p-3">
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="d-flex flex-column h-100">
-                    <p class="mb-1 pt-2 text-bold">Built by developers</p>
-                    <h5 class="font-weight-bolder">Soft UI Dashboard</h5>
-                    <p class="mb-5">From colors, cards, typography to complex elements, you will find the full documentation.</p>
-                    <a class="text-body text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="javascript:;">
-                      Read More
-                      <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-lg-5 ms-auto text-center mt-5 mt-lg-0">
-                  <div class="bg-gradient-primary border-radius-lg h-100">
-                    <img src="admin2/assets/img/shapes/waves-white.svg" class="position-absolute h-100 w-50 top-0 d-lg-block d-none" alt="waves">
-                    <div class="position-relative d-flex align-items-center justify-content-center h-100">
-                      <img class="w-100 position-relative z-index-2 pt-4" src="admin2/assets/img/illustrations/rocket-white.png" alt="rocket">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-5">
-          <div class="card h-100 p-3">
-            <div class="overflow-hidden position-relative border-radius-lg bg-cover h-100" style="background-image: url('../assets/img/ivancik.jpg');">
-              <span class="mask bg-gradient-dark"></span>
-              <div class="card-body position-relative z-index-1 d-flex flex-column h-100 p-3">
-                <h5 class="text-white font-weight-bolder mb-4 pt-2">Work with the rockets</h5>
-                <p class="text-white">Wealth creation is an evolutionarily recent positive-sum game. It is all about who take the opportunity first.</p>
-                <a class="text-white text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="javascript:;">
-                  Read More
-                  <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
+     
       <div class="row mt-4">
         <div class="col-lg-5 mb-lg-0 mb-4">
           <div class="card z-index-2">
             <div class="card-body p-3">
-              <div class="bg-gradient-dark border-radius-lg py-3 pe-1 mb-3">
+              <div class="bg-gradient-dark border-radius-lg py-3 pe-1 mb-3" style=" background-image: linear-gradient(310deg, #2152ff 0%, #21d4fd 100%);">
                 <div class="chart">
                   <canvas id="chart-bars" class="chart-canvas" height="170"></canvas>
                 </div>
@@ -148,7 +106,7 @@
                 <div class="row">
                   <div class="col-3 py-3 ps-0">
                     <div class="d-flex mb-2">
-                      <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-primary text-center me-2 d-flex align-items-center justify-content-center">
+                      <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-primary text-center me-2 d-flex align-items-center justify-content-center" style=" background-image: linear-gradient(310deg, #2152ff 0%, #21d4fd 100%);">
                         <svg width="10px" height="10px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                           <title>document</title>
                           <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -172,7 +130,7 @@
                   </div>
                   <div class="col-3 py-3 ps-0">
                     <div class="d-flex mb-2">
-                      <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-info text-center me-2 d-flex align-items-center justify-content-center">
+                      <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-info text-center me-2 d-flex align-items-center justify-content-center" style=" background-image: linear-gradient(310deg, #2152ff 0%, #21d4fd 100%);">
                         <svg width="10px" height="10px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                           <title>spaceship</title>
                           <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -198,7 +156,7 @@
                   </div>
                   <div class="col-3 py-3 ps-0">
                     <div class="d-flex mb-2">
-                      <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-warning text-center me-2 d-flex align-items-center justify-content-center">
+                      <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-warning text-center me-2 d-flex align-items-center justify-content-center" style=" background-image: linear-gradient(310deg, #2152ff 0%, #21d4fd 100%);">
                         <svg width="10px" height="10px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                           <title>credit-card</title>
                           <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -222,7 +180,7 @@
                   </div>
                   <div class="col-3 py-3 ps-0">
                     <div class="d-flex mb-2">
-                      <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-danger text-center me-2 d-flex align-items-center justify-content-center">
+                      <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-danger text-center me-2 d-flex align-items-center justify-content-center" style=" background-image: linear-gradient(310deg, #2152ff 0%, #21d4fd 100%);">
                         <svg width="10px" height="10px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                           <title>settings</title>
                           <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -267,7 +225,7 @@
           </div>
         </div>
       </div>
-      <div class="row my-4">
+      <!-- <div class="row my-4">
         <div class="col-lg-8 col-md-6 mb-md-0 mb-4">
           <div class="card">
             <div class="card-header pb-0">
@@ -611,7 +569,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <footer class="footer pt-3  ">
         <div class="container-fluid">
           <div class="row align-items-center justify-content-lg-between">
@@ -620,27 +578,10 @@
                 © <script>
                   document.write(new Date().getFullYear())
                 </script>,
-                made with <i class="fa fa-heart"></i> by
-                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
-                for a better web.
+                AKDITAL
               </div>
             </div>
-            <div class="col-lg-6">
-              <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
-                </li>
-              </ul>
-            </div>
+
           </div>
         </div>
       </footer>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,14 +9,14 @@
 
   }
   aside{
-    background-image: linear-gradient(310deg, #06A3DA 0%, #87CEEB 100%);
+    background-image: linear-gradient(310deg, #2152ff 0%, #21d4fd 100%);
   }
 </style>
 </head>
 
-<body class="g-sidenav-show  bg-gray-100">
- @include('admin.sidebar')
-  <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+<body class="g-sidenav-show bg-gray-100">
+  @include('admin.sidebar')
+  <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
       <div class="container-fluid py-1 px-3">
@@ -39,6 +38,26 @@
             <x-app-layout>
     
             </x-app-layout>
+            <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                <div class="sidenav-toggler-inner">
+                  <i class="sidenav-toggler-line"></i>
+                  <i class="sidenav-toggler-line"></i>
+                  <i class="sidenav-toggler-line"></i>
+                </div>
+              </a>
+            </li>
+            <li class="nav-item px-3 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-body p-0">
+                <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="nav-item dropdown pe-2 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-bell cursor-pointer" aria-hidden="true"></i>
+              </a>
+              
+            </li>
           </ul>
         </div>
       </div>
@@ -50,6 +69,15 @@
           <div class="card mb-4">
             <div class="card-header pb-0">
               <h6>Rendez - Vous</h6>
+              <div class="mt-3">
+                <label for="status-filter" class="form-label">Filtrer par STATU :</label>
+                <select id="status-filter" class="form-select">
+                  <option value="">Tous</option>
+                  <option value="Approved">Approved</option>
+                  <option value="Canceled">Canceled</option>
+                  <option value="In progress">In progress</option>
+                </select>
+              </div>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
@@ -68,8 +96,8 @@
                     </tr>
                   </thead>
                   <tbody>
-                  @foreach($data as $appoint)
-                    <tr>
+                    @foreach($data as $appoint)
+                    <tr class="data-row">
                       <td class="align-middle text-center text-sm">
                         <h6 class="mb-0 text-sm">{{$appoint->name}}</h6>
                       </td>
@@ -80,7 +108,7 @@
                         <h6 class="mb-0 text-sm">{{$appoint->phone}}</h6>
                       </td>
                       <td class="align-middle text-center text-sm">
-                      <h6 class="mb-0 text-sm">{{$appoint->doctor}}</h6>
+                        <h6 class="mb-0 text-sm">{{$appoint->doctor}}</h6>
                       </td>
                       <td class="align-middle text-center text-sm">
                         <h6 class="mb-0 text-sm">{{$appoint->date}}</h6>
@@ -88,16 +116,15 @@
                       <td class="align-middle text-center text-sm">
                         <h6 class="mb-0 text-sm">{{$appoint->message}}</h6>
                       </td>
-                      <td class="align-middle text-center text-sm">
+                      <td class="align-middle text-center text-sm status-cell">
                         <h6 class="mb-0 text-sm">{{$appoint->status}}</h6>
                       </td>
                       <td class="align-middle text-center text-sm">
-                      <a class="btn btn-success" href="{{url('approved',$appoint->id)}}">Approved</a>
+                        <a class="btn btn-success" href="{{url('approved',$appoint->id)}}">Approved</a>
                       </td>
                       <td class="align-middle text-center text-sm">
-                      <a  class="btn btn-danger" href="{{url('canceled',$appoint->id)}}">Canceled</a>
+                        <a class="btn btn-danger" href="{{url('canceled',$appoint->id)}}">Canceled</a>
                       </td>
-                    
                     </tr>
                     @endforeach
                   </tbody>
@@ -106,11 +133,47 @@
             </div>
           </div>
         </div>
-      </div>  
+      </div>
+      <footer class="footer pt-3  ">
+        <div class="container-fluid">
+          <div class="row align-items-center justify-content-lg-between">
+            <div class="col-lg-6 mb-lg-0 mb-4">
+              <div class="copyright text-center text-sm text-muted text-lg-start">
+                © <script>
+                  document.write(new Date().getFullYear())
+                </script>,
+                AKDITAL
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </footer>
     </div>
   </main>
-  <!--   Core JS Files   -->
- @include('admin.script')
+  <!-- Core JS Files -->
+  @include('admin.script')
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const statusFilter = document.getElementById('status-filter');
+      const tableRows = document.querySelectorAll('.data-row');
+
+      statusFilter.addEventListener('change', function() {
+        const selectedStatus = this.value;
+
+        tableRows.forEach(function(row) {
+          const statusCell = row.querySelector('.status-cell');
+          const status = statusCell.textContent.trim();
+
+          if (selectedStatus === '' || status === selectedStatus) {
+            row.style.display = 'table-row';
+          } else {
+            row.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>

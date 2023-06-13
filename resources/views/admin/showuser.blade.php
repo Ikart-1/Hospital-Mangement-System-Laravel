@@ -10,7 +10,7 @@
 
   }
   aside{
-    background-image: linear-gradient(310deg, #06A3DA 0%, #87CEEB 100%);
+    background-image: linear-gradient(310deg, #2152ff 0%, #21d4fd 100%);
   }
 </style>
 </head>
@@ -39,6 +39,26 @@
             <x-app-layout>
     
             </x-app-layout>
+            <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                <div class="sidenav-toggler-inner">
+                  <i class="sidenav-toggler-line"></i>
+                  <i class="sidenav-toggler-line"></i>
+                  <i class="sidenav-toggler-line"></i>
+                </div>
+              </a>
+            </li>
+            <li class="nav-item px-3 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-body p-0">
+                <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="nav-item dropdown pe-2 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-bell cursor-pointer" aria-hidden="true"></i>
+              </a>
+              
+            </li>
           </ul>
         </div>
       </div>
@@ -94,6 +114,21 @@
           </div>
         </div>
       </div>  
+      <footer class="footer pt-3  ">
+        <div class="container-fluid">
+          <div class="row align-items-center justify-content-lg-between">
+            <div class="col-lg-6 mb-lg-0 mb-4">
+              <div class="copyright text-center text-sm text-muted text-lg-start">
+                © <script>
+                  document.write(new Date().getFullYear())
+                </script>,
+                AKDITAL
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </footer>
     </div>
   </main>
   <!--   Core JS Files   -->

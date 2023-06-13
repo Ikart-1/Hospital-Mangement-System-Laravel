@@ -10,7 +10,7 @@
 
   }
   aside{
-    background-image: linear-gradient(310deg, #06A3DA 0%, #87CEEB 100%);
+    background-image: linear-gradient(310deg, #2152ff 0%, #21d4fd 100%);
   }
 </style>
 </head>
