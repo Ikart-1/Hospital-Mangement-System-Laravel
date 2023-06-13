@@ -30,7 +30,7 @@
                                     <select class="form-select bg-light border-0" name="doctor" style="height: 55px;">
                                     <option >---select doctor---</option>
                                     @foreach($doctor as $doctors)
-                                        <option value="{{$doctors->name}}">{{$doctors->name}} ---speciality--- {{$doctors->specialty}}</option>
+                                        <option value="{{$doctors->name}}">{{$doctors->name}} --- {{$doctors->specialty}}</option>
                                     @endforeach
                                     </select>
                                 </div>
