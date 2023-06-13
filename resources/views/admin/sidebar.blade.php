@@ -11,7 +11,7 @@
       <ul class="navbar-nav">
       <li class="nav-item">
           <a class="nav-link  active" href="{{url('showadoctors')}}" >
-            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center" style=" background-image: linear-gradient(310deg, #2152ff 0%, #21d4fd 100%);">
             <i class="fa fa-stethoscope" style="font-size:17px; color:white"></i>
             </div>
             <span class="nav-link-text ms-1">Médecins</span>
@@ -19,7 +19,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link  active" href="{{url('add_doctor_view')}}" >
-            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center" style=" background-image: linear-gradient(310deg, #2152ff 0%, #21d4fd 100%);">
             <i class="fa fa-plus-square" style="font-size:17px; color:white"></i>
                </div>
             <span class="nav-link-text ms-1">Ajouter Médecin</span>
@@ -27,7 +27,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link  active" href="{{url('showappointment')}}">
-            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center" style=" background-image: linear-gradient(310deg, #2152ff 0%, #21d4fd 100%);">
             <i class="fas fa-calendar-alt" style="font-size:17px; color:white"></i>
             </div>
             <span class="nav-link-text ms-1">Rendez Vous</span>
@@ -36,7 +36,7 @@
         
         <li class="nav-item">
           <a class="nav-link  active" href="{{url('add_appointment_view')}}">
-            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center" style=" background-image: linear-gradient(310deg, #2152ff 0%, #21d4fd 100%);">
             <i class="	far fa-calendar-plus" style="font-size:17px; color:white"></i>
             </div>
             <span class="nav-link-text ms-1">Ajouter Rendez Vous</span>
@@ -45,7 +45,7 @@
 
         <li class="nav-item">
           <a class="nav-link  active" href="{{url('showuser')}}">
-            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center" style=" background-image: linear-gradient(310deg, #2152ff 0%, #21d4fd 100%);">
             <i class="fa fa-heartbeat" style="font-size:17px; color:white"></i>
             </div>
             <span class="nav-link-text ms-1">Patients</span>
@@ -54,7 +54,7 @@
 
         <li class="nav-item">
           <a class="nav-link  active" href="{{url('add_user_view')}}">
-            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center" style=" background-image: linear-gradient(310deg, #2152ff 0%, #21d4fd 100%);" >
             <i class="fas fa-user-plus" style="font-size:17px; color:white"></i>
             </div>
             <span class="nav-link-text ms-1">Ajouter Patients</span>
