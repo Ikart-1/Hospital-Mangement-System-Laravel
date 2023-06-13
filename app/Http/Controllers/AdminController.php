@@ -6,6 +6,7 @@ use App\Models\Appointment;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Doctor;
+use App\Http\Controllers\Controller;
 
 class AdminController extends Controller
 {
@@ -29,6 +30,15 @@ class AdminController extends Controller
         return redirect()->back()->with('message','Appointment Request Successful .');
         }
 
+        public function updateDate(Request $request, $id)
+        {
+            $data = appointment::find($id);
+            $data->date = $request->new_date;
+            $data->save();
+            return redirect()->back()->with('message','Date mise à jour avec succès');
+        }
+        
+
     public function upload(Request $request){
     $doctor=new doctor;
     $image=$request->file;
@@ -49,6 +59,16 @@ class AdminController extends Controller
         $data = appointment::whereIn('status', ['Canceled', 'Approved','In progress'])->get();
         return view('admin.showappointment', compact('data'));
     }
+    
+
+    public function showhisto()
+{
+    $data = appointment::whereIn('status', ['Effectué'])->get();
+    $doctors = doctor::pluck('name'); // Remplacez "Doctor" par le nom de votre modèle de médecin
+    return view('admin.showhisto', compact('data', 'doctors'));
+}
+
+
     
     public function approved($id){
      $data=appointment::find($id);

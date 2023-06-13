@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AppointmentController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +37,13 @@ Route::get('/showappointment',[AdminController::class,'showappointment']);
 Route::get('/approved/{id}',[AdminController::class,'approved']);
 Route::get('/canceled/{id}',[AdminController::class,'canceled']);
 Route::get('/restored/{id}',[AdminController::class,'restored']);
+
+Route::put('/appointments/{id}/update-date', [AdminController::class, 'updateDate'])->name('appointments.update-date');
+
+Route::get('/showhisto',[AdminController::class,'showhisto']);
+
+
+
 Route::get('/showadoctors',[AdminController::class,'showadoctors']);
 
 Route::get('/deletedoctor/{id}',[AdminController::class,'deletedoctor']);

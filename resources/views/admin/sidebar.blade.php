@@ -60,6 +60,15 @@
             <span class="nav-link-text ms-1">Ajouter Patients</span>
           </a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="{{url('showhisto')}}">
+            <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center" style=" background-image: linear-gradient(310deg, #2152ff 0%, #21d4fd 100%);" >
+            <i class="fa fa-history" style="font-size:17px; color:white"></i>
+            </div>
+            <span class="nav-link-text ms-1">Historique RDV </span>
+          </a>
+        </li>
         
       </ul>
     </div>

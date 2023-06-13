@@ -11,7 +11,25 @@
   aside{
     background-image: linear-gradient(310deg, #2152ff 0%, #21d4fd 100%);
   }
+  .modal-content {
+        background-color: #ffffff;
+    }
+
+    .modal-header {
+        background-color: #ffffff;
+        border-bottom: none;
+    }
+
+    .modal-title {
+        color: #000000;
+        font-weight: bold;
+    }
 </style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
 </head>
 
 <body class="g-sidenav-show bg-gray-100">
@@ -95,48 +113,53 @@
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach($data as $appoint)
-                    <tr class="data-row">
-                      <td class="align-middle text-center text-sm">
-                        <h6 class="mb-0 text-sm">{{$appoint->name}}</h6>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <h6 class="mb-0 text-sm">{{$appoint->email}}</h6>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <h6 class="mb-0 text-sm">{{$appoint->phone}}</h6>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <h6 class="mb-0 text-sm">{{$appoint->doctor}}</h6>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <h6 class="mb-0 text-sm">{{$appoint->date}}</h6>
-                        <i class="fa fa-edit cursor-pointer"></i>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <h6 class="mb-0 text-sm">{{$appoint->message}}</h6>
-                      </td>
-                      <td class="align-middle text-center text-sm status-cell">
-                        <h6 class="mb-0 text-sm">{{$appoint->status}}</h6>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                          @if($appoint->status == 'Approved')
-                            <!-- Hide the Approved button -->
-                            <a class="btn btn-danger" href="{{url('canceled',$appoint->id)}}">Annuler</a>
-                            <button class="btn btn-success" disabled >Approuver</button>
-                          @elseif($appoint->status == 'Canceled')
-                            <!-- Hide the Canceled button -->
-                            <!-- Show the Retablir button -->
-                            <a class="btn btn-warning" href="{{url('restored',$appoint->id)}}">Retablir</a>
-                            <button class="btn btn-danger" disabled >Annuler</button>
-                          @elseif($appoint->status == 'In progress')
-                            <a class="btn btn-success" href="{{url('approved',$appoint->id)}}">Approuver</a>
-                            <a class="btn btn-danger" href="{{url('canceled',$appoint->id)}}">Annuler</a>
-                          @endif
-                        </td>
-                    </tr>
-                    @endforeach
-                  </tbody>
+  @foreach($data as $appoint)
+  <tr class="data-row">
+    <td class="align-middle text-center text-sm">
+      <h6 class="mb-0 text-sm">{{$appoint->name}}</h6>
+    </td>
+    <td class="align-middle text-center text-sm">
+      <h6 class="mb-0 text-sm">{{$appoint->email}}</h6>
+    </td>
+    <td class="align-middle text-center text-sm">
+      <h6 class="mb-0 text-sm">{{$appoint->phone}}</h6>
+    </td>
+    <td class="align-middle text-center text-sm">
+      <h6 class="mb-0 text-sm">{{$appoint->doctor}}</h6>
+    </td>
+    <td class="align-middle text-center text-sm">
+      <h6 class="mb-0 text-sm">{{$appoint->date}}</h6>
+      <div class="date-input-container">
+        <input type="date" class="date-picker-input" style="display: none;">
+        <button class="save-button" style="display: none;"><i class="fa fa-save"></i></button>
+      </div>
+      <i class="fa fa-edit cursor-pointer" data-appointment-id="{{ $appoint->id }}" onclick="showDatePicker(this)"></i>
+    </td>
+    <td class="align-middle text-center text-sm">
+      <h6 class="mb-0 text-sm">{{$appoint->message}}</h6>
+    </td>
+    <td class="align-middle text-center text-sm status-cell">
+      <h6 class="mb-0 text-sm">{{$appoint->status}}</h6>
+    </td>
+    <td class="align-middle text-center text-sm">
+      @if($appoint->status == 'Approved')
+      <!-- Hide the Approved button -->
+      <a class="btn btn-danger" href="{{url('canceled',$appoint->id)}}">Annuler</a>
+      <button class="btn btn-success" disabled>Approuver</button>
+      @elseif($appoint->status == 'Canceled')
+      <!-- Hide the Canceled button -->
+      <!-- Show the Retablir button -->
+      <a class="btn btn-warning" href="{{url('restored',$appoint->id)}}">Retablir</a>
+      <button class="btn btn-danger" disabled>Annuler</button>
+      @elseif($appoint->status == 'In progress')
+      <a class="btn btn-success" href="{{url('approved',$appoint->id)}}">Approuver</a>
+      <a class="btn btn-danger" href="{{url('canceled',$appoint->id)}}">Annuler</a>
+      @endif
+    </td>
+  </tr>
+  @endforeach
+</tbody>
+
                 </table>
               </div>
             </div>
@@ -160,6 +183,33 @@
       </footer>
     </div>
   </main>
+  <div class="modal fade" id="dateModal" tabindex="-1" aria-labelledby="dateModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="dateModalLabel">Modifier la date du Rendez-Vous</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="dateForm" action="{{ route('appointments.update-date', $appoint->id) }}" method="POST">
+                @csrf
+                @method('PUT')
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="datePickerInput">Nouvelle date :</label>
+                        <input type="date" class="form-control" id="datePickerInput" name="new_date">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">Enregistrer</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
   <!-- Core JS Files -->
   @include('admin.script')
   <script>
@@ -183,6 +233,46 @@
       });
     });
   </script>
+  <script>
+function showDatePicker(iconElement) {
+  const appointmentId = iconElement.getAttribute('data-appointment-id');
+  const row = iconElement.closest('.data-row');
+  const datePickerInput = row.querySelector('.date-picker-input');
+  const saveButton = row.querySelector('.save-button');
+
+  const modal = new bootstrap.Modal(document.getElementById('dateModal'), {
+    backdrop: 'static'
+  });
+
+  // Réinitialiser la valeur de l'input de date
+  datePickerInput.value = '';
+
+  // Afficher la modale
+  modal.show();
+
+  // Ajouter un événement au bouton de sauvegarde pour enregistrer la date
+  saveButton.addEventListener('click', function() {
+    const selectedDate = datePickerInput.value;
+
+    // Envoyer la requête de mise à jour de la date avec la nouvelle valeur
+    axios.put(`/appointments/${appointmentId}/update-date`, {
+        new_date: selectedDate
+      })
+      .then(function(response) {
+        // Fermer la modale
+        modal.hide();
+
+        // Recharger la page après la mise à jour de la date
+        location.reload();
+      })
+      .catch(function(error) {
+        console.error(error);
+      });
+  });
+}
+
+</script>
+
 </body>
 
 </html>
