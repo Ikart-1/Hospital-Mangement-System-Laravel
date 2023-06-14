@@ -84,8 +84,6 @@
           <div class="card mb-4">
             <div class="card-header pb-0">
               <h6>Rendez - Vous</h6>
-            </div>
-            <div class="card-body px-0 pt-0 pb-2">
               <div class="row mb-3">
                 <div class="col-md-6">
                   <label for="filter-year">Année :</label>
@@ -100,13 +98,16 @@
                 <div class="col-md-6">
                   <label for="filter-doctor">Médecin :</label>
                   <select id="filter-doctor" style="width: 200px;" class="form-select ml-1">
-        <option value="">Tous les médecins</option>
-        @foreach($doctors as $doctor)
-        <option value="{{ $doctor }}">{{ $doctor }}</option>
-        @endforeach
-    </select>
+                      <option value="">Tous les médecins</option>
+                      @foreach($doctors as $doctor)
+                      <option value="{{ $doctor }}">{{ $doctor }}</option>
+                      @endforeach
+                  </select>
                 </div>
               </div>
+            </div>
+            <div class="card-body px-0 pt-0 pb-2">
+              
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
                   <thead>

@@ -52,7 +52,7 @@
         <div class="row gx-0">
             <div class="col-md-6 text-center text-lg-start mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center">
-                    <small class="py-2"><i class="far fa-clock text-primary me-2"></i>Opening Hours: Mon - Tues : 6.00 am - 10.00 pm, Sunday Closed </small>
+                    <small class="py-2"><i class="far fa-clock text-primary me-2"></i>Horaires d'ouverture : Ouvert 24h/24, 7j/7</small>
                 </div>
             </div>
             <div class="col-md-6 text-center text-lg-end">
@@ -73,16 +73,16 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
         <a href="index.html" class="navbar-brand p-0">
-            <h1 class="m-0 text-primary"><i class="fa fa-tooth me-2"></i>DentCare</h1>
+        <img src="../../../public/assests/img/Logo-Akdital-FR-01.png" alt="main_logo">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class=" navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">About Us</a>
-                <a href="service.html" class="nav-item nav-link">Doctors</a>
+                <a href="" class="nav-item nav-link active">Home</a>
+                <a href="" class="nav-item nav-link">À propos </a>
+                <a href="" class="nav-item nav-link">Doctors</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">News</a>
                     <div class="dropdown-menu m-0">
@@ -92,7 +92,6 @@
                         <a href="appointment.html" class="dropdown-item">Appointment</a>
                     </div>
                 </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
             </div>
             <button type="button" class="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
             @if(Route::has('login'))
@@ -101,8 +100,8 @@
             <x-app-layout>
             </x-app-layout>
             @else
-            <a href="{{route('login')}}" class="btn btn-primary py-2 px-4 ms-3">Login</a>
-            <a href="{{route('register')}}" class="btn btn-primary py-2 px-4 ms-3">Register</a>
+            <a href="{{route('login')}}" class="btn btn-primary py-2 px-4 ms-3">Se connecter</a>
+            <a href="{{route('register')}}" class="btn btn-primary py-2 px-4 ms-3">S'inscrire</a>
             @endauth
             @endif
         </div>
@@ -236,22 +235,22 @@
             <div class="row g-5">
                 <div class="col-lg-7">
                     <div class="section-title mb-4">
-                        <h5 class="position-relative d-inline-block text-primary text-uppercase">About Us</h5>
-                        <h1 class="display-5 mb-0">The World's Best Dental Clinic That You Can Trust</h1>
+                        <h5 class="position-relative d-inline-block text-primary text-uppercase">À propos </h5>
+                        <h1 class="display-5 mb-0">Leader de la Santé Privée au Maroc </h1>
                     </div>
-                    <h4 class="text-body fst-italic mb-4">Diam dolor diam ipsum sit. Clita erat ipsum et lorem stet no lorem sit clita duo justo magna dolore</h4>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore erat amet</p>
+                    <h4 class="text-body fst-italic mb-4">Leader du secteur privé de la santé au Maroc, le Groupe AKDITAL place l'accessibilité aux soins au cœur de sa mission au Maroc.
+À ce jour, il dispose d'un important réseau d'établissements de santé dans plusieurs villes du Royaume et prévoit d'autres ouvertures dans les années à venir.
+La vision d'AKDITAL est de fournir aux patients les normes les plus élevées en termes de sécurité et de qualité, et d'offrir à son personnel et aux professionnels les opportunités et le cadre nécessaires à leur développement professionnel.</h4>
                     <div class="row g-3">
                         <div class="col-sm-6 wow zoomIn" data-wow-delay="0.3s">
-                            <h5 class="mb-3"><i class="fa fa-check-circle text-primary me-3"></i>Award Winning</h5>
-                            <h5 class="mb-3"><i class="fa fa-check-circle text-primary me-3"></i>Professional Staff</h5>
+                            <h5 class="mb-3"><i class="fa fa-check-circle text-primary me-3"></i>Équipe Professionnelle Primée</h5>
+                            <h5 class="mb-3"><i class="fa fa-check-circle text-primary me-3"></i>Tarifs Équitables</h5>
                         </div>
                         <div class="col-sm-6 wow zoomIn" data-wow-delay="0.6s">
-                            <h5 class="mb-3"><i class="fa fa-check-circle text-primary me-3"></i>24/7 Opened</h5>
-                            <h5 class="mb-3"><i class="fa fa-check-circle text-primary me-3"></i>Fair Prices</h5>
+                            <h5 class="mb-3"><i class="fa fa-check-circle text-primary me-3"></i>Ouvert 24h/24, 7j/7</h5>
+                            <h5 class="mb-3"><i class="fa fa-check-circle text-primary me-3"></i>Technologie de Pointe</h5>
                         </div>
                     </div>
-                    <a href="appointment.html" class="btn btn-primary py-3 px-5 mt-4 wow zoomIn" data-wow-delay="0.6s">Make Appointment</a>
                 </div>
                 <div class="col-lg-5" style="min-height: 500px;">
                     <div class="position-relative h-100">
