@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('doctor')->nullable();
             $table->date('date')->nullable();
             $table->string('message')->nullable();
+            $table->string('reponse')->nullable();
             $table->string('status')->nullable();
             $table->string('user_id')->nullable();
             $table->timestamps();

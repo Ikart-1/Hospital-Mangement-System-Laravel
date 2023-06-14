@@ -38,7 +38,8 @@ Route::get('/approved/{id}',[AdminController::class,'approved']);
 Route::get('/canceled/{id}',[AdminController::class,'canceled']);
 Route::get('/restored/{id}',[AdminController::class,'restored']);
 
-Route::put('/appointments/{id}/update-date', [AdminController::class, 'updateDate'])->name('appointments.update-date');
+Route::get('/updateapp/{id}',[AdminController::class,'updateapp']);
+Route::post('/editapp/{id}',[AdminController::class,'editapp']);
 
 Route::get('/showhisto',[AdminController::class,'showhisto']);
 

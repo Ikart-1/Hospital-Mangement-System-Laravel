@@ -27,6 +27,7 @@ class AdminController extends Controller
         $data->doctor=$request->doctor;
         $data->status='In progress';
         $data->save();
+        
         return redirect()->back()->with('message','Appointment Request Successful .');
         }
 
@@ -55,9 +56,17 @@ class AdminController extends Controller
     return redirect()->back()->with('message','Doctor Added Successfully');
     }
     public function showappointment()
-    {
+    {   
+        
         $data = appointment::whereIn('status', ['Canceled', 'Approved','In progress'])->get();
+        foreach ($data as $appoints) {
+            if (Carbon::parse($appoints->date)->isPast() && $appoints->status !== "Effectué") {
+                $appoints->status = "Effectué";
+                $appoints->save();
+            }
+        }
         return view('admin.showappointment', compact('data'));
+
     }
     
 
@@ -122,7 +131,18 @@ class AdminController extends Controller
         return redirect()->back()->with('message','Doctor Details Updated Successfully');
         }
 
-        
+        public function updateapp($id){
+            $data=appointment::find($id);
+            return view('admin.update_app',compact('data'));
+        } 
+        public function editapp(Request $request, $id){
+            $data=appointment::find($id);
+            $data->date=$request->date;
+            $data->status = 'Approved'; // Ajout de la ligne pour définir le statut sur "Approved"
+            $data->reponse = 'reponse'; // Ajout de la ligne pour définir le statut sur "Approved"
+            $data->save();
+            return redirect()->back()->with('message','La date a été modifiée avec succès');
+            }
 
 
 public function showuser(){

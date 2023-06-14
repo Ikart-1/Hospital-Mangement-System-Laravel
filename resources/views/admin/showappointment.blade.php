@@ -133,7 +133,9 @@
         <input type="date" class="date-picker-input" style="display: none;">
         <button class="save-button" style="display: none;"><i class="fa fa-save"></i></button>
       </div>
-      <i class="fa fa-edit cursor-pointer" data-appointment-id="{{ $appoint->id }}" onclick="showDatePicker(this)"></i>
+      @if($appoint->status == 'In progress')
+      <a class="" href="{{url('updateapp',$appoint->id)}}"><i class="fa fa-edit cursor-pointer"></i></a>
+      @endif
     </td>
     <td class="align-middle text-center text-sm">
       <h6 class="mb-0 text-sm">{{$appoint->message}}</h6>
@@ -183,30 +185,7 @@
       </footer>
     </div>
   </main>
-  <div class="modal fade" id="dateModal" tabindex="-1" aria-labelledby="dateModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="dateModalLabel">Modifier la date du Rendez-Vous</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form id="dateForm" action="{{ route('appointments.update-date', $appoint->id) }}" method="POST">
-                @csrf
-                @method('PUT')
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="datePickerInput">Nouvelle date :</label>
-                        <input type="date" class="form-control" id="datePickerInput" name="new_date">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-success">Enregistrer</button>
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
+  
 
 
 
@@ -233,45 +212,7 @@
       });
     });
   </script>
-  <script>
-function showDatePicker(iconElement) {
-  const appointmentId = iconElement.getAttribute('data-appointment-id');
-  const row = iconElement.closest('.data-row');
-  const datePickerInput = row.querySelector('.date-picker-input');
-  const saveButton = row.querySelector('.save-button');
-
-  const modal = new bootstrap.Modal(document.getElementById('dateModal'), {
-    backdrop: 'static'
-  });
-
-  // Réinitialiser la valeur de l'input de date
-  datePickerInput.value = '';
-
-  // Afficher la modale
-  modal.show();
-
-  // Ajouter un événement au bouton de sauvegarde pour enregistrer la date
-  saveButton.addEventListener('click', function() {
-    const selectedDate = datePickerInput.value;
-
-    // Envoyer la requête de mise à jour de la date avec la nouvelle valeur
-    axios.put(`/appointments/${appointmentId}/update-date`, {
-        new_date: selectedDate
-      })
-      .then(function(response) {
-        // Fermer la modale
-        modal.hide();
-
-        // Recharger la page après la mise à jour de la date
-        location.reload();
-      })
-      .catch(function(error) {
-        console.error(error);
-      });
-  });
-}
-
-</script>
+ 
 
 </body>
 

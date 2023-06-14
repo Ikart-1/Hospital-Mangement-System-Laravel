@@ -56,12 +56,16 @@ class HomeController extends Controller
     {
         if (Auth::id()) {
             $userid = Auth::user()->id;
-            $appoint = appointment::where('user_id', $userid)->get();
+            $statusValues = ['Canceled', 'Approved', 'In progress'];
+            $appoint = Appointment::where('user_id', $userid)
+            ->whereIn('status', $statusValues)
+            ->orderBy('date', 'asc')
+            ->get();
             
             // Vérifier les rendez-vous passés et mettre à jour le statut si la date est dépassée
             foreach ($appoint as $appoints) {
-                if (Carbon::parse($appoints->date)->isPast() && $appoints->status !== "traiter") {
-                    $appoints->status = "traiter";
+                if (Carbon::parse($appoints->date)->isPast() && $appoints->status !== "Effectué") {
+                    $appoints->status = "Effectué";
                     $appoints->save();
                 }
             }

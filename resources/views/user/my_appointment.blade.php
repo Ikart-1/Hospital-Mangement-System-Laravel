@@ -135,14 +135,16 @@
             <th style="padding:10px; font-size:20px; color:white;">Date</th>
             <th style="padding:10px; font-size:20px; color:white;">Message</th>
             <th style="padding:10px; font-size:20px; color:white;">Status</th>
+            <th style="padding:10px; font-size:20px; color:white;">Reponse</th>
             <th style="padding:10px; font-size:20px; color:white;">Cancel Appointment</th>
         </tr>
-        @foreach($appoint as $appoints)
+        @foreach($appoint->reverse() as $appoints)
         <tr style="background-color: black;" align="center">
             <td style="padding:10px; font-size:20px; color:white;">{{$appoints->doctor}}</td>
             <td style="padding:10px; font-size:20px; color:white;">{{$appoints->date}}</td>
             <td style="padding:10px; font-size:20px; color:white;">{{$appoints->message}}</td>
             <td style="padding:10px; font-size:20px; color:white;">{{$appoints->status}}</td>
+            <td style="padding:10px; background-color:green; font-size:20px; color:white;">{{$appoints->reponse}}</td>
             <td><a class="btn btn-danger" onclick="return confirm('are you sure to delete this')" href="{{url('cancel_appoint',$appoints->id)}}">Cancel</a></td>
         </tr>
         @endforeach
