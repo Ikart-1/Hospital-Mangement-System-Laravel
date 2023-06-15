@@ -43,7 +43,7 @@ Route::post('/editapp/{id}',[AdminController::class,'editapp']);
 
 Route::get('/showhisto',[AdminController::class,'showhisto']);
 
-
+Route::get('/rendez-vous', [AdminController::class, 'getRendezVous'])->name('rendez-vous');
 
 Route::get('/showadoctors',[AdminController::class,'showadoctors']);
 

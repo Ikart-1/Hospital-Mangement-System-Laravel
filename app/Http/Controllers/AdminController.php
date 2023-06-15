@@ -39,6 +39,25 @@ class AdminController extends Controller
             return redirect()->back()->with('message','Date mise à jour avec succès');
         }
         
+        public function getRendezVous()
+{
+    $appointments = Appointment::whereIn('status', ['In progress', 'Approved'])->get();
+
+    // Convertir les rendez-vous en format adapté pour le calendrier
+    $events = [];
+    foreach ($appointments as $appointment) {
+        $event = [
+            'title' => 'RDV',
+            'start' => $appointment->date,
+            'end' => $appointment->date,
+        ];
+        $events[] = $event;
+    }
+
+    // Renvoyer les rendez-vous au format JSON
+    return response()->json($events);
+}
+
 
     public function upload(Request $request){
     $doctor=new doctor;

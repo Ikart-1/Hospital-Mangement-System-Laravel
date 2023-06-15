@@ -2,8 +2,8 @@
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav" style="color: #ffffff;"></i>
       <a class="navbar-brand m-0" href="" target="_blank">
-        <!-- <img src="admin2/assets/img/Logo-Akdital-FR-01.png" class="navbar-brand-img h-100" alt="main_logo">
-        <span class="ms-1 font-weight-bold">AKDITAL</span> -->
+        <!-- <img src="admin2/assets/img/Logo-Akdital-FR-01.png" class="navbar-brand-img h-100" alt="main_logo"> -->
+        <span class="ms-1 font-weight-bold" style="color: white; font-size:37px">AKDITAL</span>
       </a>
     </div>
     <hr class="horizontal dark mt-0">
