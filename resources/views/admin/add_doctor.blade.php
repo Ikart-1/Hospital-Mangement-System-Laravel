@@ -95,15 +95,14 @@
                     <select style="color: black; width:200px" name="speciality" id="" required>
                     <option value="">--Select--</option>
                     <option value="Cardiologie">Cardiologie</option>
-                    <option value="Dermatologie">Dermatologie</option>
-                    <option value="Gastro-entérologie">Gastro-entérologie</option>
-                    <option value="Gynécologie">Gynécologie</option>
-                    <option value="Neurologie">Neurologie</option>
-                    <option value="Ophtalmologie">Ophtalmologie</option>
-                    <option value="Orthopédie">Orthopédie</option>
                     <option value="Pédiatrie">Pédiatrie</option>
-                    <option value="Psychiatrie">Psychiatrie</option>
+                    <option value="Gynécologie">Gynécologie</option>
+                    <option value="Dermatologie">Dermatologie</option>
+                    <option value="Orthopédie">Orthopédie</option>
+                    <option value="Ophtalmologie">Ophtalmologie</option>
                     <option value="Radiologie">Radiologie</option>
+                    <option value="Neurologie">Neurologie</option>
+                    <option value="Pneumologie">Pneumologie</option>
                   </select>
                     </div>
                     <label>Numéro du chambre</label>

@@ -3,9 +3,8 @@
             <div class="row g-5">
                 <div class="col-lg-4 wow slideInUp" data-wow-delay="0.1s">
                     <div class="section-title bg-light rounded h-100 p-5">
-                        <h5 class="position-relative d-inline-block text-primary text-uppercase">Our Doctors</h5>
-                        <h1 class="display-6 mb-4">Meet Our Certified & Experienced Dentist</h1>
-                        <a href="appointment.html" class="btn btn-primary py-3 px-5">Appointment</a>
+                        <h5 class="position-relative d-inline-block text-primary text-uppercase">NOS MÉDECINS</h5>
+                        <h1 class="display-6 mb-4">Découvrez notre équipe de médecins certifiés et expérimentés.</h1>
                     </div>
                 </div>
                 @foreach($doctor as $doctors)
