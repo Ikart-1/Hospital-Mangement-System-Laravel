@@ -7,6 +7,9 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Doctor;
 use App\Http\Controllers\Controller;
+use Dompdf\Dompdf;
+use Illuminate\Support\Facades\View;
+use PDF;
 
 class AdminController extends Controller
 {
@@ -204,7 +207,80 @@ public function edituser(Request $request, $id){
             $user->save();
             return redirect()->back()->with('message','Patient Added Successfully');
             }
-
             
+            
+public function generatePDF()
+{
+    $data = [
+        'title' => 'Mon PDF',
+        'content' => 'Contenu du PDF'
+    ];
+
+    $pdf = new Dompdf();
+    $pdf->loadHtml(View::make('download-doctors-pdf', $data)->render());
+    $pdf->setPaper('A4', 'portrait');
+    $pdf->render();
+}
+
+            public function downloadDoctorsPDF()
+{
+    $data = Doctor::all();
+
+    $pdf = PDF::loadView('admin.doctors_pdf', compact('data'));
+
+    return $pdf->download('doctors.pdf');
+}     
+
+
+
+public function generatePDFuser()
+{
+    $data = [
+        'title' => 'Mon PDF',
+        'content' => 'Contenu du PDF'
+    ];
+
+    $pdf = new Dompdf();
+    $pdf->loadHtml(View::make('download-patients-pdf', $data)->render());
+    $pdf->setPaper('A4', 'portrait');
+    $pdf->render();
+}
+
+            public function downloadPatientsPDF()
+{
+    
+    $data = User::where('usertype', 0)->get();
+    
+
+    $pdf = PDF::loadView('admin.patients_pdf', compact('data'));
+
+    return $pdf->download('patients.pdf');
+} 
+
+
+
+public function generatePDFhisto()
+{
+    $data = [
+        'title' => 'Mon PDF',
+        'content' => 'Contenu du PDF'
+    ];
+
+    $pdf = new Dompdf();
+    $pdf->loadHtml(View::make('download-histo-pdf', $data)->render());
+    $pdf->setPaper('A4', 'portrait');
+    $pdf->render();
+}
+
+            public function downloadHistoPDF()
+{
+    
+    $data = appointment::whereIn('status', ['Effectué'])->get();
+    
+
+    $pdf = PDF::loadView('admin.histo_pdf', compact('data'));
+
+    return $pdf->download('histoRendezvous.pdf');
+} 
 
 }

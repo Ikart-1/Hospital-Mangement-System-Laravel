@@ -1,0 +1,31 @@
+/* Styles CSS pour le PDF */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #e11313;
+}
+
+h1 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th,
+table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #dddddd;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
+
+/* Autres styles CSS personnalisés */

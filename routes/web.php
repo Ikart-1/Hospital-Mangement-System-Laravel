@@ -61,3 +61,9 @@ Route::post('/edituser/{id}',[AdminController::class,'edituser']);
 
 Route::get('/add_user_view',[AdminController::class,'adduserview']);
 Route::post('/upload_user',[AdminController::class,'uploaduser']);
+
+
+
+Route::get('/download-doctors-pdf', [AdminController::class, 'downloadDoctorsPDF'])->name('download.doctors.pdf');
+Route::get('/download-patients-pdf', [AdminController::class, 'downloadPatientsPDF'])->name('download.patients.pdf');
+Route::get('/download-histo-pdf', [AdminController::class, 'downloadHistoPDF'])->name('download.histo.pdf');

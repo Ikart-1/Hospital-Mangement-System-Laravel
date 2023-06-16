@@ -82,8 +82,17 @@
       <div class="row">
         <div class="col-12">
           <div class="card mb-4">
-            <div class="card-header pb-0">
-              <h6>Rendez - Vous</h6>
+            <div class="card-header pb-0 ">
+              <div class="d-flex align-items-center justify-content-between">
+            <div class="p"><h6>Rendez - Vous</h6></div>
+              <div>
+                 <li class="nav-item px-3 d-flex align-items-end">
+                <a href="{{ route('download.histo.pdf') }}" class="nav-link text-body p-0">
+                    <i class="fa fa-download mr-2" aria-hidden="true"></i>Exporter Rendez Vous
+                </a>
+            </li>
+              </div>
+              </div>
               <div class="row mb-3">
                 <div class="col-md-6">
                   <label for="filter-year">Année :</label>

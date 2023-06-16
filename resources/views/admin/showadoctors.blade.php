@@ -4,6 +4,7 @@
 
 <head>
 @include('admin.css')
+<!-- <link href="{{ asset('admin2/assets/pdf-styles.css') }}" rel="stylesheet"> -->
 <style>
   .navbar-vertical .navbar-nav>.nav-item .nav-link.active .icon {
     background-image: linear-gradient(310deg, #06A3DA 0%, #87CEEB 100%);
@@ -68,9 +69,20 @@
       <div class="row">
         <div class="col-12">
           <div class="card mb-4">
-            <div class="card-header pb-0">
-              <h6 >Médecins</h6>
+            <div class="card-header pb-2  d-flex align-items-center justify-content-between">
+              <div class="p"><h6 >Médecins</h6></div>
+              <div>
+                 <li class="nav-item px-3 d-flex align-items-end">
+                <a href="{{ route('download.doctors.pdf') }}" class="nav-link text-body p-0">
+                    <i class="fa fa-download mr-2" aria-hidden="true"></i>Exporter Médecins
+                </a>
+            </li>
+              </div>
+              
             </div>
+
+           
+
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">

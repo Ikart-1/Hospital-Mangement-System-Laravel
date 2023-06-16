@@ -68,8 +68,16 @@
       <div class="row">
         <div class="col-12">
           <div class="card mb-4">
-            <div class="card-header pb-0">
-              <h6>Patients</h6>
+          <div class="card-header pb-2  d-flex align-items-center justify-content-between">
+            <div class="p"><h6 >Patients</h6></div>
+            <div>
+                 <li class="nav-item px-3 d-flex align-items-end">
+                <a href="{{ route('download.patients.pdf') }}" class="nav-link text-body p-0">
+                    <i class="fa fa-download mr-2" aria-hidden="true"></i>Exporter Patients
+                </a>
+            </li>
+              </div>
+              
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
