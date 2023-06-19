@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AppointmentController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
