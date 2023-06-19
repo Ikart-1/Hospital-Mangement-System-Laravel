@@ -21,6 +21,7 @@
     background-image: linear-gradient(310deg, #2152ff 0%, #21d4fd 100%);
   }
 </style>
+<link rel="shortcut icon" href="assests/img/akdital2-02.png" type="image/x-icon"> 
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">

@@ -26,6 +26,7 @@
       font-weight: bold;
     }
   </style>
+  <link rel="shortcut icon" href="assests/img/akdital2-02.png" type="image/x-icon"> 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

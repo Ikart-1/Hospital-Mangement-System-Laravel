@@ -7,6 +7,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
+    <link rel="shortcut icon" href="assests/img/akdital2-02.png" type="image/x-icon"> 
 
     <!-- Favicon -->
     <link href="../assets/img/favicon.ico" rel="icon">
@@ -73,8 +74,8 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
         <a href="index.html" class="navbar-brand p-0">
-        <!-- <img src="../../../public/assests/img/Logo-Akdital-FR-01.png" alt="main_logo"> -->
-        <h2 style="color: #06A3DA;">AKDITAL</h2>
+        <img src="assests/img/akdital-01.png" width="150px"  alt="main_logo">
+        <!-- <h2 style="color: #06A3DA;">AKDITAL</h2> -->
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -82,15 +83,15 @@
         <div class=" navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
                 <a href="" class="nav-item nav-link active">Accueil</a>
-                <a href="" class="nav-item nav-link">À propos</a>
-                <a href="" class="nav-item nav-link">Services</a>
-                <a href="" class="nav-item nav-link">Prendre rendez-vous</a>
-                <a href="" class="nav-item nav-link">Doctors</a>
+                <a href="#about" class="nav-item nav-link">À propos</a>
+                <a href="#serv" class="nav-item nav-link">Services</a>
+                <a href="#rdv" class="nav-item nav-link">Prendre rendez-vous</a>
+                <a href="#doc" class="nav-item nav-link">Doctors</a>
             </div>
             <button type="button" class="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
             @if(Route::has('login'))
             @auth
-            <a href="{{url('myappointment')}}" class="btn btn-primary py-2 px-4 ms-3">My Appointment</a>
+            <a href="{{url('myappointment')}}" class="btn btn-primary py-2 px-4 ms-3">Mes RDV</a>
             <x-app-layout>
             </x-app-layout>
             @else
@@ -170,7 +171,7 @@
     </div>
     <!-- Carousel End -->
     <!-- About Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div id="about" class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-7">
@@ -207,7 +208,7 @@ La vision d'AKDITAL est de fournir aux patients les normes les plus élevées en
 
 
     <!-- Service Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div id="serv" class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
             <div class="row g-5 mb-5">
                 <div class="col-lg-7">

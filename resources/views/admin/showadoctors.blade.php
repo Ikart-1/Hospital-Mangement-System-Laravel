@@ -14,6 +14,7 @@
     background-image: linear-gradient(310deg, #2152ff 0%, #21d4fd 100%);
   }
 </style>
+<link rel="shortcut icon" href="assests/img/akdital2-02.png" type="image/x-icon"> 
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -116,10 +117,10 @@
                       <img height="100" width="100" src="doctorimage/{{$doctor->image}}" alt="">
                       </td>
                       <td class="align-middle text-center text-sm">
-                      <a onclick="return confirm('Are you sure to you delete this')" class="btn btn-danger" href="{{url('deletedoctor',$doctor->id)}}">Delete</a>
+                      <a onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce médecin ?')" class="btn btn-danger" href="{{url('deletedoctor',$doctor->id)}}">Supprimer</a>
                       </td>
                       <td class="align-middle text-center text-sm">
-                      <a class="btn btn-primary" href="{{url('updatedoctor',$doctor->id)}}">Update</a>
+                      <a class="btn btn-primary" href="{{url('updatedoctor',$doctor->id)}}">Modifier</a>
                       </td>
                     </tr>
                     @endforeach

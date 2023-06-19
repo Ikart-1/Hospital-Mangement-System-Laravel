@@ -27,6 +27,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="../assests/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="assests/img/akdital2-02.png" type="image/x-icon"> 
 
     <!-- Template Stylesheet -->
     <link href="../assests/css/style.css" rel="stylesheet">
@@ -52,7 +53,7 @@
         <div class="row gx-0">
             <div class="col-md-6 text-center text-lg-start mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center">
-                    <small class="py-2"><i class="far fa-clock text-primary me-2"></i>Opening Hours: Mon - Tues : 6.00 am - 10.00 pm, Sunday Closed </small>
+                <small class="py-2"><i class="far fa-clock text-primary me-2"></i>Horaires d'ouverture : Ouvert 24h/24, 7j/7</small>
                 </div>
             </div>
             <div class="col-md-6 text-center text-lg-end">
@@ -72,32 +73,24 @@
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
-        <a href="index.html" class="navbar-brand p-0">
-            <h1 class="m-0 text-primary"><i class="fa fa-tooth me-2"></i>DentCare</h1>
+        <a href="home.blade.php" class="navbar-brand p-0">
+        <img src="assests/img/akdital-01.png" width="150px" alt="main_logo">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class=" navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">About Us</a>
-                <a href="service.html" class="nav-item nav-link">Doctors</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">News</a>
-                    <div class="dropdown-menu m-0">
-                        <a href="price.html" class="dropdown-item">Pricing Plan</a>
-                        <a href="team.html" class="dropdown-item">Our Dentist</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        <a href="appointment.html" class="dropdown-item">Appointment</a>
-                    </div>
-                </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            <a href="" class="nav-item nav-link active">Accueil</a>
+                <a href="#about" class="nav-item nav-link">À propos</a>
+                <a href="#serv" class="nav-item nav-link">Services</a>
+                <a href="#rdv" class="nav-item nav-link">Prendre rendez-vous</a>
+                <a href="#doc" class="nav-item nav-link">Doctors</a>
             </div>
             <button type="button" class="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
             @if(Route::has('login'))
             @auth
-            <a href="{{url('myappointment')}}" class="btn btn-primary py-2 px-4 ms-3">My Appointment</a>
+            <a href="{{url('myappointment')}}" class="btn btn-primary py-2 px-4 ms-3">Mes RDV</a>
             <x-app-layout>
             </x-app-layout>
             @else
@@ -131,12 +124,12 @@
    <div align="center" style="padding: 70px;">
     <table>
         <tr style="background-color:#06A3DA;" align="center">
-            <th style="padding:10px; font-size:20px; color:white;">Doctor Name</th>
+            <th style="padding:10px; font-size:20px; color:white;">Doctor</th>
             <th style="padding:10px; font-size:20px; color:white;">Date</th>
             <th style="padding:10px; font-size:20px; color:white;">Message</th>
-            <th style="padding:10px; font-size:20px; color:white;">Status</th>
+            <th style="padding:10px; font-size:20px; color:white;">Statu</th>
             <th style="padding:10px; font-size:20px; color:white;">Reponse</th>
-            <th style="padding:10px; font-size:20px; color:white;">Cancel Appointment</th>
+            <th style="padding:10px; font-size:20px; color:white;">Annuler RDV</th>
         </tr>
         @foreach($appoint->reverse() as $appoints)
         <tr style="background-color: black;" align="center">
@@ -145,7 +138,7 @@
             <td style="padding:10px; font-size:20px; color:white;">{{$appoints->message}}</td>
             <td style="padding:10px; font-size:20px; color:white;">{{$appoints->status}}</td>
             <td style="padding:10px; background-color:green; font-size:20px; color:white;">{{$appoints->reponse}}</td>
-            <td><a class="btn btn-danger" onclick="return confirm('are you sure to delete this')" href="{{url('cancel_appoint',$appoints->id)}}">Cancel</a></td>
+            <td><a class="btn btn-danger" onclick="return confirm('are you sure to delete this')" href="{{url('cancel_appoint',$appoints->id)}}">Annuler</a></td>
         </tr>
         @endforeach
     </table>
